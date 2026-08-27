@@ -141,7 +141,14 @@ class _AuthScreenState extends State<AuthScreen> {
                         hint: '••••••••',
                         icon: Iconsax.lock,
                         obscure: true,
-                        validator: (v) => v!.length < 6 ? 'Min 6 characters' : null,
+                        validator: (v) {
+                          if (v == null || v.isEmpty) return 'Enter password';
+                          if (v.length < 8) return 'Password must be at least 8 characters';
+                          if (!v.contains(RegExp(r'[A-Za-z]')) || !v.contains(RegExp(r'[0-9]'))) {
+                            return 'Must contain letters and numbers';
+                          }
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 32),
                     ],
