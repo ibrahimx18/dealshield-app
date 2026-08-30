@@ -145,6 +145,7 @@ class TransactionsScreen extends StatelessWidget {
       case CommodityCategory.dollars: return Iconsax.dollar_circle;
       case CommodityCategory.oil: return Iconsax.gas_station;
       case CommodityCategory.land: return Iconsax.map;
+      case CommodityCategory.cement: return Iconsax.box;
     }
   }
 

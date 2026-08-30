@@ -158,6 +158,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
         parts.add('Type: $_landType');
         if (_landStateCtrl.text.isNotEmpty) parts.add('State: ${_landStateCtrl.text}');
         break;
+      case CommodityCategory.cement:
+        parts.add('Brand: Dangote / BUA / Lafarge');
+        parts.add('Escrow Fee: ₦10 per bag flat rate');
+        break;
       case CommodityCategory.dollars:
         if (_dollarAmountCtrl.text.isNotEmpty) parts.add('Amount: \$${_dollarAmountCtrl.text}');
         if (_dollarRateCtrl.text.isNotEmpty) parts.add('Rate: ₦${_dollarRateCtrl.text}/\$');
@@ -696,6 +700,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       case CommodityCategory.gold: return _buildGoldFields();
       case CommodityCategory.oil: return _buildOilFields();
       case CommodityCategory.land: return _buildLandFields();
+      case CommodityCategory.cement: return _buildLandFields(); // Generic fields suitable for cement
       case CommodityCategory.dollars: return _buildDollarsFields();
     }
   }
@@ -844,6 +849,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       case CommodityCategory.gold: return 'e.g. 22K Gold Bars — 2.5kg Available';
       case CommodityCategory.oil: return 'e.g. AGO Diesel — 30,000 litres at Apapa';
       case CommodityCategory.land: return 'e.g. 600sqm Residential Land — Lekki';
+      case CommodityCategory.cement: return 'e.g. 600 Bags Dangote Cement — ₦10/bag Escrow';
       case CommodityCategory.dollars: return 'e.g. \$5,000 USD at ₦1,620/\$';
     }
   }

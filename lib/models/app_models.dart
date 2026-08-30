@@ -1,25 +1,31 @@
 // Models for SafePay
 
-enum CommodityCategory { cars, gold, dollars, oil, land }
+enum CommodityCategory { cars, gold, dollars, oil, land, cement, crypto, giftcards }
 
 extension CommodityCategoryExt on CommodityCategory {
   String get label {
     switch (this) {
       case CommodityCategory.cars: return 'Cars';
       case CommodityCategory.gold: return 'Gold';
-      case CommodityCategory.dollars: return 'Dollars';
-      case CommodityCategory.oil: return 'Oil (AGO)';
-      case CommodityCategory.land: return 'Land';
+      case CommodityCategory.dollars: return 'Dollars / FX';
+      case CommodityCategory.oil: return 'Oil & Gas';
+      case CommodityCategory.land: return 'Land & Real Estate';
+      case CommodityCategory.cement: return 'Cement Dealers';
+      case CommodityCategory.crypto: return 'Crypto (USDT/BTC)';
+      case CommodityCategory.giftcards: return 'Gift Cards';
     }
   }
 
   String get icon {
     switch (this) {
       case CommodityCategory.cars: return '🚗';
-      case CommodityCategory.gold: return '🥇';
+      case CommodityCategory.gold: return '🪙';
       case CommodityCategory.dollars: return '💵';
       case CommodityCategory.oil: return '🛢️';
       case CommodityCategory.land: return '🏞️';
+      case CommodityCategory.cement: return '🏗️';
+      case CommodityCategory.crypto: return '₿';
+      case CommodityCategory.giftcards: return '🎁';
     }
   }
 
@@ -30,6 +36,7 @@ extension CommodityCategoryExt on CommodityCategory {
       case CommodityCategory.dollars: return '#00C896';
       case CommodityCategory.oil: return '#E67E22';
       case CommodityCategory.land: return '#2ECC71';
+      case CommodityCategory.cement: return '#E74C3C';
     }
   }
 }

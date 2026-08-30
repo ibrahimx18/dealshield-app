@@ -250,6 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (cat == CommodityCategory.dollars) return p.item.contains('USD') || p.item.contains('EUR') || p.item.contains('GBP');
       if (cat == CommodityCategory.oil) return p.item.contains('AGO') || p.item.contains('PMS') || p.item.contains('BLCO');
       if (cat == CommodityCategory.land) return p.item.contains('Land');
+      if (cat == CommodityCategory.cement) return p.item.contains('Cement');
       return false;
     }).toList();
 
@@ -365,6 +366,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return Iconsax.gas_station;
       case CommodityCategory.land:
         return Iconsax.map;
+      case CommodityCategory.cement:
+        return Iconsax.box;
     }
   }
 

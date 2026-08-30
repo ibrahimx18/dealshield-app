@@ -434,6 +434,7 @@ class ApiService {
       case 'currency': return CommodityCategory.dollars;
       case 'oil': return CommodityCategory.oil;
       case 'land': return CommodityCategory.land;
+      case 'cement': return CommodityCategory.cement;
       default: return CommodityCategory.cars;
     }
   }
