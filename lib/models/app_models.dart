@@ -37,6 +37,8 @@ extension CommodityCategoryExt on CommodityCategory {
       case CommodityCategory.oil: return '#E67E22';
       case CommodityCategory.land: return '#2ECC71';
       case CommodityCategory.cement: return '#E74C3C';
+      case CommodityCategory.crypto: return '#F39C12';
+      case CommodityCategory.giftcards: return '#9B59B6';
     }
   }
 }

@@ -168,6 +168,14 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
         parts.add('Form: $_dollarForm');
         parts.add('Payment: $_dollarPayment');
         break;
+      case CommodityCategory.crypto:
+        parts.add('Asset: USDT / BTC');
+        parts.add('Escrow Fee: 0.5% flat rate');
+        break;
+      case CommodityCategory.giftcards:
+        parts.add('Asset: Physical / E-code Card');
+        parts.add('Escrow Fee: 1.0% flat rate');
+        break;
     }
     // Add proof of product info
     if (_requiresProof && _proofDocType.isNotEmpty) {
@@ -700,8 +708,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       case CommodityCategory.gold: return _buildGoldFields();
       case CommodityCategory.oil: return _buildOilFields();
       case CommodityCategory.land: return _buildLandFields();
-      case CommodityCategory.cement: return _buildLandFields(); // Generic fields suitable for cement
+      case CommodityCategory.cement: return _buildLandFields(); // Generic fields
       case CommodityCategory.dollars: return _buildDollarsFields();
+      case CommodityCategory.crypto: return _buildDollarsFields();
+      case CommodityCategory.giftcards: return _buildDollarsFields();
     }
   }
 
@@ -851,6 +861,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       case CommodityCategory.land: return 'e.g. 600sqm Residential Land — Lekki';
       case CommodityCategory.cement: return 'e.g. 600 Bags Dangote Cement — ₦10/bag Escrow';
       case CommodityCategory.dollars: return 'e.g. \$5,000 USD at ₦1,620/\$';
+      case CommodityCategory.crypto: return 'e.g. 10,000 USDT TRC-20 P2P Trade';
+      case CommodityCategory.giftcards: return 'e.g. \$500 Apple Gift Card';
     }
   }
 

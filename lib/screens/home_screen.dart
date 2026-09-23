@@ -368,6 +368,10 @@ class _HomeScreenState extends State<HomeScreen> {
         return Iconsax.map;
       case CommodityCategory.cement:
         return Iconsax.box;
+      case CommodityCategory.crypto:
+        return Iconsax.coin;
+      case CommodityCategory.giftcards:
+        return Iconsax.card;
     }
   }
 
